@@ -96,6 +96,9 @@ export default class RemoteTreeData
         .filter(i => !i.isDirectory)
         .forEach(i => this._onDidChangeFile.fire(makePreivewUrl(i.resource.uri)));
     } else {
+      // Перезаписываем кэш актуальным объектом,
+      // чтобы getChildren(parent) вернул именно этот объект при reveal.
+      this._map.set(item.resource.uri.query, item);
       const parent = await this.getParent(item);
       if (parent) {
         this._onDidChangeFolder.fire(parent);
