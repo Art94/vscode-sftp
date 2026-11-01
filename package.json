@@ -2,20 +2,19 @@
   "name": "sftp",
   "displayName": "SFTP",
   "description": "SFTP/FTP sync",
-  "version": "1.16.3",
-  "publisher": "Natizyskunk",
-  "author": "Natizyskunk <natan.fourie@hotmail.fr> (https://github.com/Natizyskunk)",
+  "version": "1.16.9",
+  "publisher": "Art94",
+  "author": "ArtValensky",
   "engines": {
     "vscode": "^1.64.2"
   },
   "bugs": {
-    "url": "https://github.com/Natizyskunk/vscode-sftp/issues",
-    "email": "natan.fourie@hotmail.fr"
+    "url": "https://github.com/Art94/vscode-sftp/issues"
   },
-  "homepage": "https://github.com/Natizyskunk/vscode-sftp/blob/master/README.md",
+  "homepage": "https://github.com/Art94/vscode-sftp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Natizyskunk/vscode-sftp.git"
+    "url": "https://github.com/Art94/vscode-sftp.git"
   },
   "license": "MIT",
   "categories": [
@@ -70,6 +69,12 @@
           "type": "boolean",
           "default": false,
           "description": "\"Download\" instead of \"View Content\" when open file in Remote Explorer"
+        },
+        "sftp.privateKeyPath": {
+          "type": "string",
+          "default": "",
+          "scope": "resource",
+          "description": "Default private key path for SFTP configs that leave privateKeyPath empty. Supports ~/ paths."
         }
       }
     },
@@ -279,6 +284,15 @@
       {
         "command": "sftp.remoteExplorer.refresh",
         "title": "Refresh",
+        "icon": {
+          "light": "resources/light/refresh.svg",
+          "dark": "resources/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "sftp.remoteExplorer.refreshActiveFile",
+        "title": "Refresh Active Remote File",
+        "category": "SFTP",
         "icon": {
           "light": "resources/light/refresh.svg",
           "dark": "resources/dark/refresh.svg"
@@ -527,6 +541,13 @@
           "when": "sftp.enabled && resourceScheme == remote"
         }
       ],
+      "editor/title": [
+        {
+          "command": "sftp.remoteExplorer.refreshActiveFile",
+          "group": "navigation",
+          "when": "sftp.enabled && resourceScheme == remote"
+        }
+      ],
       "editor/title/context": [
         {
           "command": "sftp.revealInExplorer",
@@ -685,7 +706,7 @@
     "dev": "webpack --mode development --watch",
     "test": "jest",
     "package": "vsce package",
-    "pub:debug": "rm -rf _debug && mkdir _debug && vsce package --out _debug/sftp-debug.vsix && cd _debug && git init && git commit --allow-empty -m 'update debug package' && git checkout -b debug-pacakge && cp ../INSTALL_DEBUG.md README.md  && git add . && git commit -am 'update debug package' && git push git@github.com:Natizyskunk/vscode-sftp.git debug-pacakge --force"
+    "pub:debug": "rm -rf _debug && mkdir _debug && vsce package --out _debug/sftp-debug.vsix && cd _debug && git init && git commit --allow-empty -m 'update debug package' && git checkout -b debug-pacakge && cp ../INSTALL_DEBUG.md README.md  && git add . && git commit -am 'update debug package' && git push git@github.com:Art94/vscode-sftp.git debug-pacakge --force"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
@@ -698,7 +719,7 @@
     "glob-parent": ">=5.1.2",
     "jest": "^29.0.3",
     "json-schema": ">=0.4.0",
-    "memfs": "^2.15.5",
+    "memfs": "^3.6.0",
     "merge": ">=2.1.1",
     "node-notifier": ">=8.0.1",
     "rimraf": "^2.7.1",

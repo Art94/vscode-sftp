@@ -70,6 +70,14 @@
         "description": "True to download when a file opens.",
         "default": "confirm"
       },
+      "filePerm": {
+        "type": ["number", "null"],
+        "description": "Octal permissions for newly created files."
+      },
+      "dirPerm": {
+        "type": ["number", "null"],
+        "description": "Octal permissions for newly created directories."
+      },
       "syncOption": {
         "type": "object",
         "description": "Configuration the behavior of `Sync` command.",
@@ -135,7 +143,7 @@
         "description": "The number of hours difference between the local machine and remote/server. (remote minus local)"
       },
       "limitOpenFilesOnRemote": {
-        "enum": ["number", true],
+        "type": ["number", "boolean"],
         "description": "Limit the open file descriptors to the specific number in a remote server. Set to true for using default limit(222). Do not set this unless you have to.",
         "default": true
       }
@@ -422,6 +430,10 @@
             "description": "Optional opaque identifier used by servers to ensure session state is not shared between applications. Unused by clients. Note: tls.createServer() uses a 128 bit truncated SHA1 hash value generated from process.argv, other APIs that create secure contexts have no default value."
           }
         }
+      },
+      "passive": {
+        "type": "boolean",
+        "description": "Enable passive mode for FTP connections."
       }
     }
   }

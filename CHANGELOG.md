@@ -1,29 +1,58 @@
+## 1.16.9 - 2026-11-01
+* Write the configured default private key path into newly generated SFTP configs.
+
+## 1.16.8 - 2026-11-01
+* Add an `sftp.privateKeyPath` VS Code setting as the fallback for empty SFTP key paths.
+
+## 1.16.7 - 2026-11-01
+* Generate a complete SFTP configuration template with empty connection values and safe defaults.
+
+## 1.16.6 - 2026-11-01
+* Fix the Remote Explorer activity bar icon color and remove its empty view icon.
+
+## 1.16.5 - 2026-10-31
+* Integrate the 1.16.4 upstream feature and maintenance updates.
+* Keep `ssh2` at v1.17.0 for Node 24 compatibility.
+* Restore the Remote Explorer tree item cache fix and its regression tests.
+
+## 1.16.4 - 2026-10-27
+* Add download icons (file & folder) inline in the remote explorer treeview (Pull request #381 from @satiromarra vscode-sftp:dev-download-icons).
+* Add `Refresh Active Remote File` command and editor title button to refresh the currently focused remote file (Pull request #408 from @atariq11700 vscode-sftp:develop).
+* Fix casing from canonical URI when computing remote paths on Windows/macOS (Pull request #396 from @ain-soph vscode-sftp:master).
+* Add `close` & `end` events handlers for ssh2 to detect disconnections (Pull request #457 from @mbroinsky vscode-sftp:detectDisconnect).
+* Add confirmation popup for `Upload File To All Profiles` & `Upload Folder To All Profiles` commands (Pull request #507 from @criuRW vscode-sftp:develop).
+* Update configuration.md for better readability (Pull request #537 from @level42ca vscode-sftp:develop).
+* Update README.md, LICENSE and documentations.
+* Update commands.md and README.md with `Upload To All Profiles`, `Refresh Active Remote File` and remote explorer download buttons.
+* Update npm `memfs` dev dependency to v3.6.0 and fix test suite (jest preprocessor, fs mock, scheduler timers) and type-check (`skipLibCheck`).
+* Change dependabot schedule interval from weekly to daily.
+
 ## 1.16.3 - 2023-06-16
-* [#356] New Feature : Upload to all profiles (Pull request [#313](https://github.com/Natizyskunk/vscode-sftp/pull/313) from @wewawa vscode-sftp:create_multi_command).
-* [#357] Fix : Correcting Typo 'avaliable' => 'available' (Pull request [#343](https://github.com/Natizyskunk/vscode-sftp/pull/343) from @kjo-sdds vscode-sftp:develop).
-* [#358] Permissions : Add filePerm and dirPerm options for configuring permissions (Pull request [#347](https://github.com/Natizyskunk/vscode-sftp/pull/347) from @Jchase2 vscode-sftp:develop).
-* [#359] Fix : Correcting sftp connection with public key (Pull request [#350](https://github.com/Natizyskunk/vscode-sftp/pull/350) from @inu1255 vscode-sftp:develop).
+* [#356] New Feature : Upload to all profiles (Pull request #313 from @wewawa vscode-sftp:create_multi_command).
+* [#357] Fix : Correcting Typo 'avaliable' => 'available' (Pull request #343 from @kjo-sdds vscode-sftp:develop).
+* [#358] Permissions : Add filePerm and dirPerm options for configuring permissions (Pull request #347 from @Jchase2 vscode-sftp:develop).
+* [#359] Fix : Correcting sftp connection with public key (Pull request #350 from @inu1255 vscode-sftp:develop).
 * Upgrade `ssh2` version to official v1.13.0 by @mscdex.
 
 ## pre-1.16.2 - 2022-11-30
-* [#271] Fix case change of file name not sent correctly (Pull request [#249](https://github.com/Natizyskunk/vscode-sftp/pull/249) from @NyaPPuu vscode-sftp:fix_rename).
+* [#271] Fix case change of file name not sent correctly (Pull request #249 from @NyaPPuu vscode-sftp:fix_rename).
 * [#272] Update npm `types/node` depedency to v9.6.51.
 
 ## 1.16.1 - 2022-11-02
-* [#251] Add multiple select + Update `Download File` & `Downalod Folder` commands to the remote view + Add `Upload File` & `Upload Folder` commands to the remote view (Pull request [#221](https://github.com/Natizyskunk/vscode-sftp/pull/221) from @NyaPPuu vscode-sftp:add_multiple_select).
+* [#251] Add multiple select + Update `Download File` & `Downalod Folder` commands to the remote view + Add `Upload File` & `Upload Folder` commands to the remote view (Pull request #221 from @NyaPPuu vscode-sftp:add_multiple_select).
 
 ## 1.16.0 - 2022-10-29
-* [#242] Add order option and fix typos in docs (Pull request [#157](https://github.com/Natizyskunk/vscode-sftp/pull/157) from @NyaPPuu vscode-sftp:add_order_option).
-* [#243] Fix refresh when creating/deleting file/folder + Fix 'Reveal in Remote Explorer' and Refresh Button in Remote Explorer. (Pull request [#159](https://github.com/Natizyskunk/vscode-sftp/pull/159) from @NyaPPuu vscode-sftp:fix_refresh).
-* [#244] Cleanup Text in Markdown Files (Pull request [#213](https://github.com/Natizyskunk/vscode-sftp/pull/213) from @BrayFlex vscode-sftp:develop).
+* [#242] Add order option and fix typos in docs (Pull request #157 from @NyaPPuu vscode-sftp:add_order_option).
+* [#243] Fix refresh when creating/deleting file/folder + Fix 'Reveal in Remote Explorer' and Refresh Button in Remote Explorer. (Pull request #159 from @NyaPPuu vscode-sftp:fix_refresh).
+* [#244] Cleanup Text in Markdown Files (Pull request #213 from @BrayFlex vscode-sftp:develop).
 
 ## 1.15.20 - 2022-08-28
-* Fix typo 'worksapce' to 'workspace' (Pull request [#158](https://github.com/Natizyskunk/vscode-sftp/pull/158) from @NyaPPuu vscode-sftp:fix_typo).
+* Fix typo 'worksapce' to 'workspace' (Pull request #158 from @NyaPPuu vscode-sftp:fix_typo).
 * Add `Download File` & `Downalod Folder` commands to the remote view (Thanks to @mrandrey on issue #97).
-* Update npm `types/fs-extra` depedency to v9.0.13 (Pull request [#204](https://github.com/Natizyskunk/vscode-sftp/pull/204) from @dependabot vscode-sftp:dependabot/npm_and_yarn/types/fs-extra-9.0.13).
-* Update npm `typescript-tslint-plugin` depedency to v1.0.2 (Pull request [#206](https://github.com/Natizyskunk/vscode-sftp/pull/206) from @dependabot vscode-sftp:dependabot/npm_and_yarn/typescript-tslint-plugin-1.0.2).
-* Update npm `tslint` depedency to v6.1.3 (Pull request [#207](https://github.com/Natizyskunk/vscode-sftp/pull/207) from @dependabot vscode-sftp:dependabot/npm_and_yarn/tslint-6.1.3).
-* Update npm `ts-loader` depedency to v9.4.1 (Pull request [#208](https://github.com/Natizyskunk/vscode-sftp/pull/208) from @dependabot vscode-sftp:dependabot/npm_and_yarn/ts-loader-9.4.1).
+* Update npm `types/fs-extra` depedency to v9.0.13 (Pull request #204 from @dependabot vscode-sftp:dependabot/npm_and_yarn/types/fs-extra-9.0.13).
+* Update npm `typescript-tslint-plugin` depedency to v1.0.2 (Pull request #206 from @dependabot vscode-sftp:dependabot/npm_and_yarn/typescript-tslint-plugin-1.0.2).
+* Update npm `tslint` depedency to v6.1.3 (Pull request #207 from @dependabot vscode-sftp:dependabot/npm_and_yarn/tslint-6.1.3).
+* Update npm `ts-loader` depedency to v9.4.1 (Pull request #208 from @dependabot vscode-sftp:dependabot/npm_and_yarn/ts-loader-9.4.1).
 * Update npm `typescript` depedency to v3.9.7.
 * Update npm `jest` depedency to v29.0.3.
 
@@ -41,33 +70,33 @@
 
 ## 1.15.16 - 2022-05-26
 * Reorder cipher and serverHostKey algorithms.
-* Update [FAQ.md](https://github.com/Natizyskunk/vscode-sftp/blob/master/FAQ.md), and [documentations](https://github.com/Natizyskunk/vscode-sftp/tree/master/docs).
+* Update FAQ.md, and documentations.
 
 ## 1.15.15 - 2022-08-21
-* Fix "Open SSH in Terminal" not working because "terminal.integrated.shell.windows" is deprecated and fix typo `src/commands/commandOpenSshConnection.ts`. (Pull request [#155](https://github.com/Natizyskunk/vscode-sftp/pull/155) from @mean-cj vscode-sftp:patch-2).
+* Fix "Open SSH in Terminal" not working because "terminal.integrated.shell.windows" is deprecated and fix typo `src/commands/commandOpenSshConnection.ts`. (Pull request #155 from @mean-cj vscode-sftp:patch-2).
 
 ## 1.15.14 - 2022-05-06
 * Update npm `async` depedency to v2.6.4.
 * Update npm `minimist` depedency to v1.2.6.
 
 ## 1.15.13 - 2022-02-11
-* Add support for OpenSSH v8.8 SSH private key by using SHA-2 instead of SHA-1 to fix SSH public key signatures. (See issue [#112](https://github.com/Natizyskunk/vscode-sftp/issues/112)).
+* Add support for OpenSSH v8.8 SSH private key by using SHA-2 instead of SHA-1 to fix SSH public key signatures. (See issue #112).
 
 ## 1.15.12 - 2022-02-11
-* Add deletions support to "Upload Changed files" command. (Pull request [#113](https://github.com/Natizyskunk/vscode-sftp/pull/113) from @brykov vscode-sftp:master merged inside [#117](https://github.com/Natizyskunk/vscode-sftp/pull/117)).
+* Add deletions support to "Upload Changed files" command. (Pull request #113 from @brykov vscode-sftp:master merged inside #117).
 
 * ## 1.15.11 - 2022-02-09
-* Enhance sftp interactiveAuth mode (See [Wiki](https://github.com/Natizyskunk/vscode-sftp/wiki/SFTP-only-Configuration#interactiveauth)). (Pull request [#94](https://github.com/Natizyskunk/vscode-sftp/pull/94) from @lacastorine vscode-sftp:lacastorine merged inside [#114](https://github.com/Natizyskunk/vscode-sftp/pull/114)).
+* Enhance sftp interactiveAuth mode (See Wiki). (Pull request #94 from @lacastorine vscode-sftp:lacastorine merged inside #114).
 
 ## 1.15.10 - 2021-11-22
 * Update npm `json-schema` devDepedency to v0.2.3.
 
 ## 1.15.9 - 2021-11-21
-* Remove ssh configuration bug introduced in pull request [#69](https://github.com/Natizyskunk/vscode-sftp/pull/69) from @clemyan while we can find another solution.
+* Remove ssh configuration bug introduced in pull request #69 from @clemyan while we can find another solution.
 
 ## 1.15.8 - 2021-11-12
   * Fix 'Upload Changed Files' & 'No Such File' bugs (Commit [fix upload changed files](https://github.com/wandway/vscode-sftp/commit/775016788e4c59db901dc68a20c1f61ebcca7bc7#diff-20516d8841b4891f1926f1e40e447e99e0575a5e36ba6814f6b85b45db1b8fbb) from @wandway vscode-sftp:master).
-  * Make the 'Upload Changed Files' command visible and add a default keyboard shortcut (Ctrl+Alt+U) to call it (Merged pull request [#84](https://github.com/Natizyskunk/vscode-sftp/pull/84) from @PaPa31 vscode-sftp:master). See [FAQ](https://github.com/Natizyskunk/vscode-sftp/blob/master/FAQ.md#clicking-upload-changed-files-does-not-work)).
+  * Make the 'Upload Changed Files' command visible and add a default keyboard shortcut (Ctrl+Alt+U) to call it (Merged pull request #84 from @PaPa31 vscode-sftp:master). See FAQ).
   * Update Webpack from 4.39.2 to 5.0.0.
   * Update Webpack-cli from 3.3.7 to 4.7.0.
 
@@ -75,10 +104,10 @@
   * Upgrade `ssh2` version to official v1.5.0 by @mscdex.
 
 ## 1.15.6 - 2021-10-27
-  * Fix ssh configuration resolution (Merged pull request [#69](https://github.com/Natizyskunk/vscode-sftp/pull/69) from @clemyan vscode-sftp:fix-ssh-config).
+  * Fix ssh configuration resolution (Merged pull request #69 from @clemyan vscode-sftp:fix-ssh-config).
 
 ## 1.15.5 - 2021-10-27
-  * Update mtime after file was saved before upload (Merged pull request [#75](https://github.com/Natizyskunk/vscode-sftp/pull/75) from @viperet vscode-sftp:save_before_upload_mtime).
+  * Update mtime after file was saved before upload (Merged pull request #75 from @viperet vscode-sftp:save_before_upload_mtime).
   * Add pull request issue template.
   * Add funding/sponsors page.
   * Add code scanning alert.
@@ -90,20 +119,20 @@
   * Upgrade `ssh2` version to official v1.4.0 bcy @mscdex.
 
 ## 1.15.2 - 2021-08-24
-  * Fix the `useTempFile` bug (Merged pull request [#41](https://github.com/Natizyskunk/vscode-sftp/pull/41) from @kripper vscode-sftp:master).
+  * Fix the `useTempFile` bug (Merged pull request #41 from @kripper vscode-sftp:master).
   * Change `useTempFile` default value from true to false.
-  * Fix the "Cannot read property 'handle' of undefined" bug (related to `useTempFile` bug) [TypeError: Cannot read property 'handle' of undefined](https://github.com/Natizyskunk/vscode-sftp/issues/43).
-  * Fix the "fd argument must be of type number. Received undefined" bug (related to `useTempFile` bug) [TypeError since last update (The "fd" argument must be of type number.)](https://github.com/Natizyskunk/vscode-sftp/issues/34).
+  * Fix the "Cannot read property 'handle' of undefined" bug (related to `useTempFile` bug) TypeError: Cannot read property 'handle' of undefined.
+  * Fix the "fd argument must be of type number. Received undefined" bug (related to `useTempFile` bug) TypeError since last update (The "fd" argument must be of type number.).
   * Fix the "Permission denied" bug when uploading.
-  * New option [openSsh](https://github.com/Natizyskunk/vscode-sftp/wiki/Common-Configuration#openssh) (Pull request [#42](https://github.com/Natizyskunk/vscode-sftp/pull/42) from @kripper vscode-sftp:atomic-rename merged inside [#45](https://github.com/Natizyskunk/vscode-sftp/pull/45)).
+  * New option openSsh (Pull request #42 from @kripper vscode-sftp:atomic-rename merged inside #45).
   * Update of the wiki to add support for openSsh option.
 
 ## 1.15.1 - 2021-08-24
   * Add the `useTempFile` option to the test configuration spec.
-  * Fix get target mode error && add more precise logger-infos for tranfer tasks (Merged pull request [#29](https://github.com/Natizyskunk/vscode-sftp/pull/29) from @kripper vscode-sftp:master).
+  * Fix get target mode error && add more precise logger-infos for tranfer tasks (Merged pull request #29 from @kripper vscode-sftp:master).
 
 ## 1.15.0 - 2021-08-23
-  * New option [useTempFile](https://github.com/Natizyskunk/vscode-sftp/wiki/Common-Configuration#usetempfile) (Merged pull request [#29](https://github.com/Natizyskunk/vscode-sftp/pull/29) from @kripper vscode-sftp:master).
+  * New option useTempFile (Merged pull request #29 from @kripper vscode-sftp:master).
   * Update of the wiki to add support for useTempFile option.
 
 ## 1.14.0 - 2021-08-06
@@ -111,14 +140,14 @@
   * switching from beta to stable.
 
 ## 1.14.0-beta - 2021-07-15
-  * Add `create remote file` and `create remote folder` commands (Merged pull request [#18](https://github.com/Natizyskunk/vscode-sftp/pull/18) from @mathsgod vscode-sftp:master).
+  * Add `create remote file` and `create remote folder` commands (Merged pull request #18 from @mathsgod vscode-sftp:master).
 
 ## 1.13.6 - 2021-07-15
   * Fix syntax in `src\fileHandlers\transfer\__tests__\transfer-test.ts`.
 
 ## 1.13.5 - 2021-07-10
   * Reorder test parameters for `keepalive`.
-  * Add v1.13.5-beta. Only use beta version if you still encounter the "REQUEST_FAILURE" error like described in those two issues : [Buffering on save file after 15 minute](https://github.com/Natizyskunk/vscode-sftp/issues/7) & [Infinite spinner on file save after server rest connection with client](https://github.com/Natizyskunk/vscode-sftp/issues/8).
+  * Add v1.13.5-beta. Only use beta version if you still encounter the "REQUEST_FAILURE" error like described in those two issues : Buffering on save file after 15 minute & Infinite spinner on file save after server rest connection with client.
 
 ## 1.13.4 - 2021-07-10
   * Fix "Error with the transfer direction."
@@ -129,8 +158,8 @@
   * re-add yargs-parser ^20.2.4 to package.json.
   * Remove `yarn.lock`.
   * Add `package-lock.json`.
-  * Fix Writing CHANNEL_DATA (0) / Writing FSETSTAT (Merged pull request [#12](https://github.com/Natizyskunk/vscode-sftp/pull/12) from @zarausto vscode-sftp:patch-1).
-  * Fix transfer-test for Windows platform (Merged pull request [#11](https://github.com/Natizyskunk/vscode-sftp/pull/11) from @alex1504 vscode-sftp:fix-transfer-test).
+  * Fix Writing CHANNEL_DATA (0) / Writing FSETSTAT (Merged pull request #12 from @zarausto vscode-sftp:patch-1).
+  * Fix transfer-test for Windows platform (Merged pull request #11 from @alex1504 vscode-sftp:fix-transfer-test).
 
 ## 1.13.2 - 2021-07-07
   * remove braces >=2.3.1 to package.json.
